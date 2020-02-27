@@ -1,8 +1,17 @@
 <ejs-grid [dataSource]='data' [allowPaging]="true" [pageSettings]='pageSettings'>
     <e-columns>
-        <e-column field='id' headerText='ID' textAlign='Right' width=90></e-column>
-        <e-column field='nombres' headerText='Nombres' width=120></e-column>
-        <e-column field='apellidos' headerText='Apellidos' textAlign='Right' format='C2' width=90></e-column>
-        <e-column field='sede' headerText='sede' textAlign='Right' format='yMd' width=120></e-column>
+        <e-column field='id' headerText='ID' textAlign='Center' width=40></e-column>
+        <e-column field='nombres' headerText='Nombres' textAlign='Center' width=120></e-column>
+        <e-column field='apellidos' headerText='Apellidos' textAlign='Center' format='C2' width=90></e-column>
+        <e-column field='sede' headerText='Sede educativa' textAlign='Center' width=120></e-column>
+        <e-column field='fecha' headerText='Fecha de asistencia' textAlign='Center' width=120></e-column>
+        <e-column field='asistio' headerText='Asistio' textAlign='Center' width=120>
+            <ng-template #template let-data>
+                <i *ngIf='data.asistio; else noAsistio' class="far fa-smile-beam"></i>
+                <ng-template #noAsistio>
+                    <i class="far fa-frown"></i>
+                </ng-template>
+            </ng-template>
+        </e-column>
     </e-columns>
 </ejs-grid>

@@ -1,3 +1,8 @@
+/**
+ * @author Cristian Silva
+ * @description Listado de informacion general
+ */
+
 import { Component, OnInit, Input, OnChanges, SimpleChanges } from '@angular/core';
 import { PageSettingsModel } from '@syncfusion/ej2-grids';
 

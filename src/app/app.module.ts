@@ -1,3 +1,8 @@
+/**
+ * @author Cristian Silva
+ * @description Archivo de confirguracion inicial del proyecto, listado de componentes
+ */
+
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
 
@@ -12,8 +17,9 @@ import { HomeComponent } from './components/home/home.component';
 // Componentes sync
 import { DateRangePickerModule } from '@syncfusion/ej2-angular-calendars';
 import { DropDownListModule } from '@syncfusion/ej2-angular-dropdowns';
-import { GridModule,PageService, ToolbarService } from '@syncfusion/ej2-angular-grids';
+import { GridModule, PageService, ToolbarService } from '@syncfusion/ej2-angular-grids';
 import { TableComponent } from './components/home/components/table/table.component';
+import { FooterComponent } from './components/footer/footer.component';
 // #Fin componentes sync
 
 @NgModule({
@@ -21,7 +27,8 @@ import { TableComponent } from './components/home/components/table/table.compone
     AppComponent,
     NavbarComponent,
     HomeComponent,
-    TableComponent
+    TableComponent,
+    FooterComponent
   ],
   imports: [
     BrowserModule,
