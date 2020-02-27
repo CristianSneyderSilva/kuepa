@@ -50,15 +50,19 @@ export class HomeComponent implements OnInit {
       finDate = yearFin + '-' + monthFin.toString() + '-' + getDateFin;
 
     }
+    debugger
     if ((this.sede.text !== '' && this.sede.text !== null) && (this.estudiantes.text !== '' && this.estudiantes.text !== null)) {
       this.datos = _.filter(data, (item) => {
-        return item.fecha >= startDate && item.fecha <= finDate && item.sede === this.sede.text && item.sede === this.estudiantes.text;
+        debugger
+        // tslint:disable-next-line: max-line-length
+        const json = item.fecha >= startDate && item.fecha <= finDate && item.sede === this.sede.text && item.tipoEstudio === this.estudiantes.text;
+        return json;
       });
     } else if ((this.sede.text !== '' && this.sede.text !== null) && (this.estudiantes.text === '' || this.estudiantes.text === null)) {
       this.datos = _.filter(data, { sede: this.sede.text });
     } else if ((this.sede.text === '' || this.sede.text == null) && (this.estudiantes.text !== '' && this.estudiantes.text !== null)) {
       this.datos = _.filter(data, { sede: this.estudiantes.text });
-    // tslint:disable-next-line: max-line-length
+      // tslint:disable-next-line: max-line-length
     } else if ((this.estudiantes.text === '' || this.estudiantes.text === null) && (this.sede.text === '' || this.sede.text == null) && (this.fechas.value !== '' || this.fechas.value !== null)) {
       this.datos = _.filter(data, (item) => {
         const json = item.fecha >= startDate && item.fecha <= finDate;
