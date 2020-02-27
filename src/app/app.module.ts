@@ -12,21 +12,25 @@ import { HomeComponent } from './components/home/home.component';
 // Componentes sync
 import { DateRangePickerModule } from '@syncfusion/ej2-angular-calendars';
 import { DropDownListModule } from '@syncfusion/ej2-angular-dropdowns';
+import { GridModule,PageService, ToolbarService } from '@syncfusion/ej2-angular-grids';
+import { TableComponent } from './components/home/components/table/table.component';
 // #Fin componentes sync
 
 @NgModule({
   declarations: [
     AppComponent,
     NavbarComponent,
-    HomeComponent
+    HomeComponent,
+    TableComponent
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
     DateRangePickerModule,
-    DropDownListModule 
+    DropDownListModule,
+    GridModule
   ],
-  providers: [],
+  providers: [PageService, ToolbarService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
